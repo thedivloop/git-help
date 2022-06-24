@@ -102,6 +102,11 @@ When there is a merge conflict one has to open the files shown in red during the
 
 Then we have to stage again and commit the file using git commit without message to open the editor for review.
 
+If one wants to merge different histories we can use:
+```
+git merge origin/main --allow-unrelated-histories
+```
+
 ## Detached HEAD
 
 Checkout on a commit hash instead of a branch. The commit has is the first 7 characters of the 40 characters commit hash.
