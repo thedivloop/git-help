@@ -1,5 +1,6 @@
 # Git commands
-# My Table of content
+Git and github can be a complicated subject with often people facing some tricky and annoying problems. Here I tried to summarize a bit what are the most used and useful commands and how to avoid typical difficult situations.
+## Topics
 - [Basic Commands](#basic)
 - [Graph representation](#graph)
 - [Merging](#merge)
@@ -7,6 +8,7 @@
 - [Work in progress managment](#stash)
 - [Git config file](#gitconfig)
 - [Github](#github)
+- [Credits](#credits)
 
 
 
@@ -241,3 +243,6 @@ If locally your HEAD is on master then you can rename the branch so:
 ```
 git branch -m master main
 ```
+<a name="credits"></a>
+## Credits 
+The quote text comes from this [Alexpchin gist](https://gist.github.com/alexpchin/102854243cd066f8b88e).
