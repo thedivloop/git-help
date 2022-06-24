@@ -1,6 +1,17 @@
 # Git commands
+# My Table of content
+- [Basic Commands](#basic)
+- [Graph representation](#graph)
+- [Merging](#merge)
+- [Detached HEAD](#detached)
+- [Work in progress managment](#stash)
+- [Git config file](#gitconfig)
+- [Github](#github)
 
-## Basic commands
+
+
+
+## Basic commands <a name="basic"></a>
 
 Initialize
 ```
@@ -57,7 +68,7 @@ Create and directly checkout a new branch
 git checkout -b <newbranch>
 ```
 
-## Graph representation
+## Graph representation <a name="graph"></a>
 
 ```
 git log --all --decorate --oneline --graph
@@ -69,7 +80,7 @@ To create an alias:
 alias graph="git log --all --decorate --oneline --graph"
 ```
 
-## Merging
+## Merging <a name="merge"></a>
   Fast forward merge (inheritance path between the 2 branches). If not on same inheritance path then a 3 way merge is applied with a commit and a commit message.
   Get first on the branch you want to merge into (e.g. master).
   ```
@@ -98,7 +109,7 @@ Aborting a merge
 git merge --abort
 ```
 
-When there is a merge conflict one has to open the files shown in red during the merge tentative, review the separation between HEAD and the <branch we want to merge from>. Remove the markers (<<<<<<<, HEAD, =======, <branch>, >>>>>>>>>) and save the file.
+When there is a merge conflict one has to open the files shown in red during the merge tentative, review the separation between HEAD and the `branch` we want to merge from. Remove the markers `(<<<<<<<,` `HEAD`, `=======,` `<branch>,` `>>>>>>>>>)` and save the file.
 
 Then we have to stage again and commit the file using git commit without message to open the editor for review.
 
@@ -107,7 +118,7 @@ If one wants to merge different histories we can use:
 git merge origin/main --allow-unrelated-histories
 ```
 
-## Detached HEAD
+## Detached HEAD <a name="detached"></a>
 
 Checkout on a commit hash instead of a branch. The commit has is the first 7 characters of the 40 characters commit hash.
 ```
@@ -122,7 +133,7 @@ git branch <newbranch>
 git checkout <newbranch>
 ```
 
-## Work in progress managment
+## Work in progress managment <a name="stash"></a>
 If one wants to move from branch to branch without staging/commiting file updates we can stash.
 ```
 git stash
@@ -143,7 +154,7 @@ Once we want to apply the changes:
 git stash apply
 ```
 
-## Git config file
+## Git config file <a name="gitconfig"></a>
 
 > It is creating a branch 'master' and that branch I am not able to merge into the 'main' branch. (It show nothing in common so cannot merge)
 > Sorry if it is a silly question, but I am trying this thing and stuck since many days. Any help would be much appreciated.
@@ -161,17 +172,17 @@ git config --global --edit
 find 
 ```
 [init]
-        defaultBranch = master
+  defaultBranch = master
 ```
 and replace master by main
 ```
 [init]
-        defaultBranch = main
+  defaultBranch = main
 ```
 save and exit and voila!
 This was very helpful for me, hope it was of some use for you too!!
 
-## Github
+## Github <a name="github"></a>
 
 Rename local branch
 ```
