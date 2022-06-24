@@ -95,7 +95,7 @@ git diff <branch1>..<branch2>
 
 Aborting a merge
 ```
-git git merge --abort
+git merge --abort
 ```
 
 When there is a merge conflict one has to open the files shown in red during the merge tentative, review the separation between HEAD and the <branch we want to merge from>. Remove the markers (<<<<<<<, HEAD, =======, <branch>, >>>>>>>>>) and save the file.
