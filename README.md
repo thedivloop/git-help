@@ -70,6 +70,23 @@ alias graph="git log --all --decorate --oneline --graph"
 ```
 
 ## Merging
+  Fast forward merge (inheritance path between the 2 branches). If not on same inheritance path then a 3 way merge is applied with a commit and a commit message.
+  Get first on the branch you want to merge into (e.g. master).
+  ```
+  git merge <branch to merge from>
+  ```
+
+  Review the merged branches
+  ```
+  git branch --merged
+  ```
+
+
+  Delete branch
+  Can only delete merged branches with -d. If want to delete unmerged branches -D must be used.
+  ```
+  git branch -d <branch to delete>
+  ```
 
 Review the difference between 2 branches
 ```
@@ -120,25 +137,13 @@ Once we want to apply the changes:
 ```
 git stash apply
 ```
-Fast forward merge (inheritance path between the 2 branches). If not on same inheritance path then a 3 way merge is applied with a commit and a commit message.
-Get first on the branch you want to merge into (e.g. master).
-```
-git merge <branch to merge from>
-```
-
-Review the merged branches
-```
-git branch --merged
-```
-
-
-Delete branch
-Can only delete merged branches with -d. If want to delete unmerged branches -D must be used.
-```
-git branch -d <branch to delete>
-```
 
 ## Github
+
+Rename local branch
+```
+git branch -m master main
+```
 
 Add origin URL
 ```
