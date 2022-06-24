@@ -67,8 +67,8 @@ Create and directly checkout a new branch
 ```
 git checkout -b <newbranch>
 ```
-
-## Graph representation <a name="graph"></a>
+<a name="graph"></a>
+## Graph representation
 
 ```
 git log --all --decorate --oneline --graph
@@ -79,8 +79,8 @@ To create an alias:
 ```
 alias graph="git log --all --decorate --oneline --graph"
 ```
-
-## Merging <a name="merge"></a>
+<a name="merge"></a>
+## Merging 
   Fast forward merge (inheritance path between the 2 branches). If not on same inheritance path then a 3 way merge is applied with a commit and a commit message.
   Get first on the branch you want to merge into (e.g. master).
   ```
@@ -117,8 +117,8 @@ If one wants to merge different histories we can use:
 ```
 git merge origin/main --allow-unrelated-histories
 ```
-
-## Detached HEAD <a name="detached"></a>
+<a name="detached"></a>
+## Detached HEAD
 
 Checkout on a commit hash instead of a branch. The commit has is the first 7 characters of the 40 characters commit hash.
 ```
@@ -132,8 +132,8 @@ git branch <newbranch>
 ```
 git checkout <newbranch>
 ```
-
-## Work in progress managment <a name="stash"></a>
+<a name="stash"></a>
+## Work in progress managment
 If one wants to move from branch to branch without staging/commiting file updates we can stash.
 ```
 git stash
@@ -154,7 +154,8 @@ Once we want to apply the changes:
 git stash apply
 ```
 
-## Git config file <a name="gitconfig"></a>
+<a name="gitconfig"></a>
+## Git config file 
 
 > It is creating a branch 'master' and that branch I am not able to merge into the 'main' branch. (It show nothing in common so cannot merge)
 > Sorry if it is a silly question, but I am trying this thing and stuck since many days. Any help would be much appreciated.
@@ -182,7 +183,8 @@ and replace master by main
 save and exit and voila!
 This was very helpful for me, hope it was of some use for you too!!
 
-## Github <a name="github"></a>
+<a name="github"></a>
+## Github 
 
 Rename local branch
 ```
