@@ -143,6 +143,34 @@ Once we want to apply the changes:
 git stash apply
 ```
 
+## Git config file
+
+> It is creating a branch 'master' and that branch I am not able to merge into the 'main' branch. (It show nothing in common so cannot merge)
+> Sorry if it is a silly question, but I am trying this thing and stuck since many days. Any help would be much appreciated.
+
+Not a silly question, I struggled until finding out that GitHub is now using `main` by default instead of `master`.
+If locally your HEAD is on master then you can rename the branch so:
+```
+git branch -m master main
+```
+
+Now in the init config file you can change the default branch name. Access the global config here:
+```
+git config --global --edit
+```
+find 
+```
+[init]
+        defaultBranch = master
+```
+and replace master by main
+```
+[init]
+        defaultBranch = main
+```
+save and exit and voila!
+This was very helpful for me, hope it was of some use for you too!!
+
 ## Github
 
 Rename local branch
@@ -163,4 +191,40 @@ git push --set-upstream origin main
 Force your local repo to github if any problem (this will overwrite your github repo content!!)
 ```
 git push origin main --force
+```
+
+It is possible to merge 2 different pieces of code with unrelated commit histories.
+
+> ```
+> hint: Updates were rejected because the remote contains work that you do
+> hint: not have locally. This is usually caused by another repository pushing
+> hint: to the same ref. You may want to first integrate the remote changes
+> hint: (e.g., 'git pull ...') before pushing again.
+> hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+> ```
+> 
+> 
+> Force it:
+> ` git push --set-upstream origin master --force`
+
+This might happen if you create a new github repo with a readme file. It could also be totally different code and somehow you feel confident to merge. Then you can do a fetch of the github repo:
+```
+git fetch
+```
+
+Followed by a merge with --allow-unrelated-histories:
+```
+git merge origin/main --allow-unrelated-histories
+```
+When the commit file opens just save it or update it.
+Then you are ready for the push
+```
+git push origin main
+```
+This will sync your local repo with your remote repo (origin on branch main).
+
+Here I used main because github is now using main by default instead of master.
+If locally your HEAD is on master then you can rename the branch so:
+```
+git branch -m master main
 ```
